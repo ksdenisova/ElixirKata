@@ -14,6 +14,8 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Install Elixir
+        uses: actions/setup-elixir@v1
       - name: Unit tests
         run: mix test
       - run: echo "🍏 This job's status is ${{ job.status }}."
