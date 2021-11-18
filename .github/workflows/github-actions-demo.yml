@@ -15,5 +15,6 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - name: Unit tests
-      - run: mix test
+      - run: |
+          mix test
       - run: echo "🍏 This job's status is ${{ job.status }}."
