@@ -7,35 +7,7 @@ defmodule CoinChangerTest do
     assert is_list(CoinChanger.module_info())
   end
 
-  test "returns a change with pennies" do
-    change = %{:pennies => 0, :nickels => 0, :dimes => 0, :quarters => 0}
-             |> CoinChanger.make_change(0)
-
-    assert Map.has_key?(change, :pennies)
-  end
-
-  test "returns a change with nickels" do
-    change = %{:pennies => 0, :nickels => 0, :dimes => 0, :quarters => 0}
-    change = CoinChanger.make_change(change, 0)
-
-    assert Map.has_key?(change, :nickels)
-  end
-
-  test "returns a change with dimes" do
-    change = %{:pennies => 0, :nickels => 0, :dimes => 0, :quarters => 0}
-    change = CoinChanger.make_change(change, 0)
-
-    assert Map.has_key?(change, :dimes)
-  end
-
-  test "returns a change with quarters" do
-    change = %{:pennies => 0, :nickels => 0, :dimes => 0, :quarters => 0}
-    change = CoinChanger.make_change(change, 0)
-
-    assert Map.has_key?(change, :quarters)
-  end
-
-  test "returns all zero if 0 was given" do
+  test "returns all zero for 0 coins given" do
     coins = 0
     actual = %{:pennies => 0, :nickels => 0, :dimes => 0, :quarters => 0}
              |> CoinChanger.make_change(coins)
