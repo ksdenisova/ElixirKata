@@ -2,9 +2,9 @@ name: Elixir & Ruby CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ all ]
   pull_request:
-    branches: [ main ]
+    branches: [ all ]
 
 jobs:
   build:
@@ -43,6 +43,8 @@ jobs:
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: open tests folder
       run: cd http_server_spec
+    - name: check directory
+      run: pwd
     - name: Install gems
       run: bundle install
     - name: Run implemented Acceptance tests
