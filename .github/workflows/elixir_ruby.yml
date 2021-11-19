@@ -43,7 +43,7 @@ jobs:
       run: gem install bundler:1.17.2
     - name: Install gems
       working-directory: ./http_server_spec
-      bundle install
+      run: bundle install
     - name: Run implemented Acceptance tests
       working-directory: ./http_server_spec
       run: rake test:f0
