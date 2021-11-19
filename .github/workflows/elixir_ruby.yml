@@ -40,7 +40,7 @@ jobs:
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Install bundler
       working-directory: ./http_server_spec
-      run: bundle update --bundler
+      run: gem install bundler:1.17.2
     # - name: Install gems
     #   working-directory: ./http_server_spec
     #   bundle install
