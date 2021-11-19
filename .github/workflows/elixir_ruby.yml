@@ -38,11 +38,9 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: open tests folder
-      run: cd http_server_spec
-    - name: check directory
-      run: pwd
     - name: Install gems
+      working-directory: ./http_server_spec
       run: bundle install
     - name: Run implemented Acceptance tests
+      working-directory: ./http_server_spec
       run: rake test:f0
