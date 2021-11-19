@@ -40,7 +40,7 @@ jobs:
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Install gems
       working-directory: ./http_server_spec
-      run: bundle update --bundler | bundle install
+      run: gem install bundler:1.17.2 | bundle install
     - name: Run implemented Acceptance tests
       working-directory: ./http_server_spec
       run: rake test:f0
