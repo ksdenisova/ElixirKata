@@ -43,5 +43,7 @@ jobs:
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: open tests folder
       run: cd http_server_spec
+    - name: Install gems
+      run: bundle install
     - name: Run implemented Acceptance tests
       run: rake test:f0
