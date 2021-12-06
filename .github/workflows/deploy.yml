@@ -15,9 +15,8 @@ jobs:
     - uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_KEY }}
-        
+        username: ${{ secrets.USERNAME }}
         script: |
-        cd build
-        git clone git@github.com:ksdenisova/ElixirKata.git
+          cd build
+          git clone git@github.com:ksdenisova/ElixirKata.git
