@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
 
-    name: Deploy to Prodaction 
+    name: Deploy to Production 
     runs-on: ubuntu-latest
     
     steps:
