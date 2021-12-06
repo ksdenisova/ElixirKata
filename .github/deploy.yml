@@ -1,0 +1,23 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  deploy:
+
+    name: Deploy to Prodaction 
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        
+        script: |
+        cd build
+        git clone git@github.com:ksdenisova/ElixirKata.git
