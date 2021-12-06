@@ -1,1 +1,4 @@
-# CoinChanger
+# Elixir Kata
+- CoinChanger
+- RomanNumerals
+- Stack
