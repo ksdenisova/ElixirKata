@@ -1,7 +1,7 @@
 defmodule Stack do
     defstruct [ list: [] ]
 
-    def empty?(stack = %Stack{}), do: length(stack.list) == 0
+    # def empty?(stack = %Stack{}), do: length(stack.list) == 0
 
     def size(stack = %Stack{}), do: length(stack.list)
 
