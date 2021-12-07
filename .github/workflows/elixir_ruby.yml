@@ -47,3 +47,20 @@ jobs:
     - name: Run implemented Acceptance tests
       working-directory: ./http_server_spec
       run: rake test:f0
+
+  deploy:
+  
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    name: Deploy to Production 
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          cd build
+          git clone git@github.com:ksdenisova/ElixirKata.git
